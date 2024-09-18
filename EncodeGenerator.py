@@ -11,7 +11,7 @@ StudentImagesList = []
 StudentIds = []
 for i,path in enumerate(PathList, start=0):
     StudentImagesList.append(cv2.imread(os.path.join(StudentFolderPath,path)))
-    # StudentImagesList[i] = cv2.resize(StudentImagesList[i], (488, 544 ))
+    StudentImagesList[i] = cv2.resize(StudentImagesList[i], (216, 216 ))
     StudentIds.append(os.path.splitext(path)[0])
 
 
