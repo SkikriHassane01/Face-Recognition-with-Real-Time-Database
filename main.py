@@ -18,6 +18,9 @@
 
 import cv2
 import os 
+import pickle
+from logger import logger
+
 cap = cv2.VideoCapture(0)
 cap.set(3, 531)
 cap.set(4, 491)
@@ -32,6 +35,16 @@ for i,path in enumerate(modePathList, start=0):
     ModeImagesList.append(cv2.imread(os.path.join(ModeFolderPath,path)))
     ModeImagesList[i] = cv2.resize(ModeImagesList[i], (488, 544 ))
 
+
+#Load the encoding file 
+logger.info("=========Loading Encode File=============")
+file = open('EncodeFile.p','rb')
+encodeListKnownWithIds = pickle.load(file)
+file.close()
+
+EncodeListKnown, StudentIds = encodeListKnownWithIds
+logger.info(f"Student Ids:{StudentIds}")
+logger.info("=========Encode File Loaded=============")
 
 while True:
     success, img = cap.read()
