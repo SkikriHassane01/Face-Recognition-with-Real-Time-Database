@@ -17,12 +17,21 @@
 
 
 import cv2
-
+import os 
 cap = cv2.VideoCapture(0)
 cap.set(3, 531)
 cap.set(4, 491)
 
 imgBackground = cv2.imread('./Resources/Background.png')
+
+# add the different mode to the ModeImagesList
+ModeFolderPath = './Resources/Modes'
+modePathList = os.listdir(ModeFolderPath)
+ModeImagesList = []
+for i,path in enumerate(modePathList, start=0):
+    ModeImagesList.append(cv2.imread(os.path.join(ModeFolderPath,path)))
+    ModeImagesList[i] = cv2.resize(ModeImagesList[i], (488, 544 ))
+
 
 while True:
     success, img = cap.read()
@@ -31,14 +40,15 @@ while True:
         print('Failed to read frame from the camera')
         break
 
-    img = cv2.resize(img, (531 - 16, 491 - 16)) # the border size is 8px
-    
-    img = add_border_radius(img, 50)
-    imgBackground[156+8:156+8 + 491 - 16, 52+8:52+8 + 531 - 16] = img
+    img = cv2.resize(img, (531, 491))
+    cv2.flip(img,1) # horizontally
+    imgBackground[156:156 + 491, 52:52 + 531] = img
+    imgBackground[103:103 + 544, 742:742 + 488 ] = ModeImagesList[0]
+
     
     cv2.imshow("Face Attendance", imgBackground)
 
-    cv2.flip(img,1) # horizontally
+
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
