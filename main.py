@@ -62,7 +62,6 @@ while True:
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = cv2.flip(img, 1)  # horizontally
 
-    # print("==find a list of 128-dimensional face encodings==")
     LocationCurrentFrame = face_recognition.face_locations(img)
     EncodeCurrentFrame = face_recognition.face_encodings(img, LocationCurrentFrame)
 
@@ -78,7 +77,6 @@ while True:
         matchIndex = np.argmin(faceDistance)
 
         if Matches[matchIndex]:
-            print(f"Known Face Detected with id {StudentIds[matchIndex]}")
             y1, x2, y2, x1 = faceLocation  # (top, right, bottom, left)
             bbox = (52 + x1, 156 + y1, x2 - x1, y2 - y1) # bbox: Bounding box [x, y, w, h]
             imgBackground = cvzone.cornerRect(imgBackground, bbox, rt=0)
