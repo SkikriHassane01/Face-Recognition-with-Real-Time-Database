@@ -19,7 +19,7 @@ data = {
         "total_attendance": 2,
         "standing": "G",
         "year": 1,
-        "last_attendance_time": "2024-08-00:43:32",
+        "last_attendance_time": "2024-08-10 01:43:32",
     },
         "2673": {
         "name": "Mark Zeugerberg",
@@ -28,16 +28,16 @@ data = {
         "total_attendance": 3,
         "standing": "B",
         "year": 2,
-        "last_attendance_time": "2024-08-00:43:32",
+        "last_attendance_time": "2024-08-10 01:43:32",
     },
-        "4673": {
+        "4668": {
         "name": "Hassane Skikri",
         "major": "data science",
         "starting_year": 2021,
         "total_attendance": 9,
         "standing": "G",
         "year": 4,
-        "last_attendance_time": "2024-08-00:43:32",
+        "last_attendance_time": "2024-08-10 01:43:32",
     },
         "5578": {
         "name": "Jeff Bezos",
@@ -46,7 +46,7 @@ data = {
         "total_attendance": 10,
         "standing": "B",
         "year": 5,
-        "last_attendance_time": "2024-08-00:43:32",
+        "last_attendance_time": "2024-08-10 01:43:32",
     },
         "7653": {
         "name": "larry Ellison",
@@ -55,7 +55,7 @@ data = {
         "total_attendance": 20,
         "standing": "G",
         "year": 2,
-        "last_attendance_time": "2024-08-00:43:32",
+        "last_attendance_time": "2024-08-10 01:43:32",
     },
 }
 
