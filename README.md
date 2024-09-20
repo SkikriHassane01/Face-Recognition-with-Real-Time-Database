@@ -9,5 +9,10 @@ In this project, we will create a real-time face attendance system. we will add 
 5. Database Setup
 6. Add data to db
 7. Add images to db
-8. Real-time db update
+8. Real-time db updatew
 9. limit number of attendance per day
+
+
+![alt text](result.gif)
+
+<video controls src="video.mp4" title="Title"></video>
